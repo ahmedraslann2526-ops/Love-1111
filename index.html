@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12040a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <title>❤️ 11/11</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700&family=Great+Vibes&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+  <!-- خلفية الجسيمات (قلوب ونجوم) -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ===================== شاشة كلمة السر ===================== -->
+  <section id="lock" class="lock" aria-label="شاشة الدخول">
+    <div class="lock__inner">
+      <div class="lock__heart" aria-hidden="true">
+        <span class="beat">❤️</span>
+        <span class="ring"></span>
+        <span class="ring ring--2"></span>
+      </div>
+
+      <h1 class="lock__title">في مفاجأة صغيرة مستنياكي يا أجمل حاجة في حياتي ❤️</h1>
+
+      <form id="lockForm" class="lock__form glass" autocomplete="off" novalidate>
+        <label for="password" class="sr-only">كلمة السر</label>
+        <div class="field">
+          <span class="field__icon" aria-hidden="true">🔒</span>
+          <input id="password" type="password" inputmode="text" placeholder="كلمة السر..."
+                 autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" required>
+        </div>
+        <button type="submit" class="btn btn--primary">
+          <span>افتحي مفاجأتك ❤️</span>
+        </button>
+        <p id="lockError" class="lock__error" role="alert" aria-live="assertive"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- طبقة الانتقال السينمائي -->
+  <div id="curtain" class="curtain" aria-hidden="true">
+    <span class="curtain__heart">❤️</span>
+  </div>
+
+  <!-- ===================== الموقع الرئيسي (مخفي لحد كلمة السر) ===================== -->
+  <main id="app" class="app" hidden>
+
+    <!-- الترحيب -->
+    <section id="welcome" class="section welcome">
+      <div class="float-hearts" aria-hidden="true">
+        <i>❤️</i><i>💗</i><i>💕</i><i>❤️</i><i>💖</i><i>💗</i>
+      </div>
+      <div class="welcome__content">
+        <p class="welcome__date" dir="ltr">11 · 11</p>
+        <h2 class="welcome__title" dir="ltr">Happy 11/11 My Love ❤️</h2>
+        <p class="welcome__subtitle" dir="ltr">A Happy Massage From Hamoudi 😉😉😍😍🥳❤️</p>
+      </div>
+      <a href="#counter" class="scroll-cue" aria-label="انزلي للقسم اللي بعده">
+        <span class="scroll-cue__dot"></span>
+      </a>
+    </section>
+
+    <!-- العداد -->
+    <section id="counter" class="section">
+      <h2 class="section__title reveal">بقالنا قد إيه مع بعض؟ ❤️</h2>
+
+      <div class="counter glass reveal">
+        <div class="card-hearts" aria-hidden="true"><i>❤️</i><i>💗</i><i>💕</i><i>💖</i></div>
+
+        <div class="counter__total">
+          <span class="counter__big" id="totalDays">0</span>
+          <span class="counter__big-label">يوم مع بعض</span>
+        </div>
+
+        <div class="counter__months">
+          <span><b id="months">0</b> شهر</span>
+          <span class="counter__and">و</span>
+          <span><b id="remDays">0</b> يوم</span>
+        </div>
+
+        <div class="counter__grid">
+          <div class="unit"><span class="unit__num" id="cDays">0</span><span class="unit__label">يوم</span></div>
+          <div class="unit"><span class="unit__num" id="cHours">00</span><span class="unit__label">ساعة</span></div>
+          <div class="unit"><span class="unit__num" id="cMinutes">00</span><span class="unit__label">دقيقة</span></div>
+          <div class="unit"><span class="unit__num" id="cSeconds">00</span><span class="unit__label">ثانية</span></div>
+        </div>
+
+        <p class="counter__since">من يوم ١ أبريل ٢٠٢٦</p>
+      </div>
+
+      <p class="section__note reveal">وأجمل أيام عمري هي الأيام اللي قضيتها معاكي يا روح قلبي ❤️</p>
+    </section>
+
+    <!-- الرسالة الرئيسية -->
+    <section id="message" class="section">
+      <h2 class="section__title reveal">رسالة ليكي في يوم 11/11 ❤️</h2>
+
+      <article class="letter glass reveal">
+        <div class="card-hearts" aria-hidden="true"><i>💌</i><i>❤️</i><i>💗</i><i>💕</i></div>
+        <span class="letter__seal" aria-hidden="true">💌</span>
+        <p>النهارده 11/11 اليوم اللي الناس كلها بتتمنى فيه أمنيه وأنا مش محتاج أتمنى أي حاجة من الدنيا غير إنك تفضلي معايا وجانبي طول العمر لان انت أمنيتي اللي اتحققت وزيادة وجودك في حياتي هو أحلى رزق ربنا بعتهولي ربنا يديمك نعمة في حياتي وميحرمنيش من ضحكتك ولا من حنيتك عليا أبدًا ي روح قلبي</p>
+        <p>بيقولوا ان اليوم ده يوم الأمنيات بس أنا من يوم ما عرفتك وأنا حاسس إن كل أمنياتي ده اتحققت بوجودك انتي مش بس حبيبتي أنتي نور عيني و ضحكتي وسندي وفرحة أيامي ربنا يخليكي ليا ي روح قلبي و شوكلاته حياتي بحبك اوي و متزعلش مني على اي حاجه عملتها قبل كده و خليك جانبي على طول ي نور عيني الحمد الله عليكي والله بحبك اوي 🌏💋❤️👸🏻😍😍❤️</p>
+      </article>
+    </section>
+
+    <!-- زر الحب -->
+    <section id="love" class="section love">
+      <button id="loveBtn" class="heart-btn reveal" type="button" aria-haspopup="dialog" aria-controls="lovePopup">
+        <span class="heart-btn__shape" aria-hidden="true">
+          <svg viewBox="0 0 32 29.6"><path d="M23.6 0c-3.4 0-6.3 2.7-7.6 5.6C14.7 2.7 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.5 11.9 16 21.2 6.1-9.3 16-12.1 16-21.2C32 3.8 28.2 0 23.6 0z"/></svg>
+        </span>
+        <span class="heart-btn__text">بحبك ي حمودي ❤️</span>
+      </button>
+      <p class="love__hint reveal">دوسي على القلب 👆</p>
+    </section>
+
+    <!-- الرسالة التانية -->
+    <section id="second" class="section">
+      <div class="float-hearts float-hearts--soft" aria-hidden="true">
+        <i>💗</i><i>❤️</i><i>💕</i><i>💖</i>
+      </div>
+      <article class="note glass reveal">
+        <span class="note__icon" aria-hidden="true">💗</span>
+        <p>دي ابسط حاجه ممكن اعملها ليكي ي روح قلبي و عاوزك دايما تكوني مبسوطه و فرحانه و متخليش اي حاجه تزعلك و أنا جانبك ي حياتي انتي بحبك اوي 💋😍❤️</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span class="footer__line" aria-hidden="true"></span>
+      <p>بتصميم <span dir="ltr">Eng.Ahmed Raslan</span></p>
+    </footer>
+  </main>
+
+  <!-- ===================== البوب أب ===================== -->
+  <div id="lovePopup" class="popup" role="dialog" aria-modal="true" aria-labelledby="popupText" hidden>
+    <div class="popup__backdrop" data-close></div>
+    <div class="popup__card glass">
+      <button class="popup__close" type="button" aria-label="إغلاق" data-close>✕</button>
+      <div class="popup__heart" aria-hidden="true">💖</div>
+      <div class="popup__body">
+        <p id="popupText" class="popup__text">وانا كمان مجنون بيكي ي روح قلب و حيات و نن عين و بنوتت حمودي 😍💋❤️</p>
+      </div>
+      <button class="btn btn--soft" type="button" data-close>رجوع ❤️</button>
+    </div>
+  </div>
+  <div id="burst" class="burst" aria-hidden="true"></div>
+
+  <!-- ===================== الموسيقى ===================== -->
+  <audio id="song" src="assets/love-song.mp3" preload="auto" loop playsinline></audio>
+
+  <button id="musicBtn" class="music-btn" type="button" aria-label="إيقاف الأغنية" aria-pressed="true" hidden>
+    <span class="music-btn__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="music-btn__play" aria-hidden="true">▶</span>
+  </button>
+
+  <button id="musicPrompt" class="music-prompt" type="button" hidden>
+    🎵 دوسي هنا عشان تشغلي الأغنية
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
